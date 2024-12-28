@@ -5,7 +5,7 @@ install() {
         echo "Installing Cursor..."
 
         CURSOR_URL="https://downloader.cursor.sh/linux/appImage/x64"
-        ICON_URL=""
+        ICON_URL="https://raw.githubusercontent.com/er-nabin-bhusal/cursor-install/main/64.png"
 
         APPIMAGE_PATH="/opt/cursor.appimage"
         ICON_PATH="/opt/cursor.png"
@@ -43,6 +43,3 @@ EOL
 
 install
 
-# on top of this you can also add alias to easily use cursor command
-# echo "alias cursor='cursor --no-sandbox'" >> ~/.bashrc
-# source ~/.bashrc
