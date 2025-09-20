@@ -4,16 +4,9 @@ install() {
     if ! [ -f /opt/cursor.appimage ]; then
         echo "Installing Cursor..."
 
-        CURSOR_URL="https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable"
-        RAW_RESPONSE=$(curl -sL "$CURSOR_URL")
-        echo "--- Raw response from Cursor API ---"
-        echo "$RAW_RESPONSE"
-        echo "--- End of response ---"
-        DOWNLOAD_URL=$(echo "$RAW_RESPONSE" | jq -r '.downloadUrl')
-        if [ -z "$DOWNLOAD_URL" ] || [ "$DOWNLOAD_URL" = "null" ]; then
-            echo "Failed to fetch the download URL. Exiting."
-            exit 1
-        fi
+        
+        DOWNLOAD_URL="https://downloads.cursor.com/production/b753cece5c67c47cb5637199a5a5de2b7100c18f/linux/x64/deb/amd64/deb/cursor_1.6.35_amd64.deb"
+        
         ICON_URL="https://raw.githubusercontent.com/er-nabin-bhusal/cursor-install/main/64.png"
 
         APPIMAGE_PATH="/opt/cursor.appimage"
